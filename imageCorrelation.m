@@ -2,26 +2,15 @@ function [gamma] = imageCorrelation(I1,I2)
 %IMAGECORRELATION - quantify the simularity of I1 with respect to I2
 %
 %   This function computes the "cross-correlation" as defined by Kwon et
-%   al. (see ref. below. The first image, I1, is a reference image. The
-%   reference image is compared to I2. If I2 is a stack of images, then a
-%   gamma is calculated for each I2 slice with resplect ot I1. If I1 is a
-%   stack, then the mean of I1 is used as the image to compare with I2. 
+%   al. (see ref. below}. The first image, I1, is a reference image and
+%   it's compared to I2. The "cross-correlation" between the two images,
+%   gamma, is calculated.
+%   
+%   If I2 is a stack of images, then a gamma is calculated for each I2
+%   slice with resplect ot I1. 
 %
-%
-%%
-% $\gamma( t^\prime ; t ) = \frac{\Sigma_{x,y} C_{x,y}(t) C_{x,y}(t^\prime)}
-%                      {\sqrt{\Sigma_{x,y}C_{x,y}(t)^2\Sigma_{x,y}C_{x,y}(t^\prime)^2}}$
-%
-% _does this really work_
-% \begin{equation}\label{eq: xCorrDef}
-% 	
-% \end{equation}
-% 
-% where C is the contrast at times $t$ and $t^\prime$. The contrast is given by:
-% \begin{equation}\label{(eq: contrastDef)}	
-% 	C_{x,y} = \frac{I_{x,y}(t) - \bar{I}(t)}{\bar{I}(t)}
-% \end{equation}
-% where $\bar{I}(t)$ is the mean of $I_{x,y}(t)$. 
+%   If I1 is a stack of images, then the mean of I1 is used as the image to
+%   compare with I2.
 %
 % Syntax:  [gamma] = imageCorrelation(I1,I2);
 %
@@ -30,7 +19,7 @@ function [gamma] = imageCorrelation(I1,I2)
 %    I2 - image(s) to compare to reference
 %
 % Outputs:
-%    gamma - "cross-correlation" value
+%    gamma - "cross-correlation" value for each slice of I2
 %
 % Example: 
 %    Line 1 of example
@@ -53,7 +42,7 @@ function [gamma] = imageCorrelation(I1,I2)
 % email: dennis.gardner@colorado.edu
 % Website 1: http://www.github.com/DennisFGardner 
 % Website 2: http://www.linkedin.com/in/dennisfgardner
-% File Creation: Sept. 14th, 2016
+% File Creation: Sept. 15th, 2016
 
 %------------- BEGIN CODE --------------
 
