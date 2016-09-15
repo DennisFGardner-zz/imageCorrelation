@@ -17,9 +17,16 @@ function [stackI] = createImageStack(I,L,type,varargin)
 %       [stackI] = createImageStack(I, L, 'sin1', 'PERIOD', 'AMP')
 %
 % Example: 
-%    Line 1 of example
-%    Line 2 of example
-%    Line 3 of example
+%       [I] = createImage(512, 512, 128, 'square'); imagesc(I); axis image;
+%       L = 100;
+%       [stackI] = createImageStack(I, L, 'sin1', 50, 50);
+%       for ii=1:L, 
+%           imagesc(stackI(:,:,ii)); 
+%           drawnow; 
+%           pause(0.1); 
+%       end;
+%       close all
+%       
 %
 % Other m-files required: none
 % Subfunctions: none
@@ -40,7 +47,7 @@ function [stackI] = createImageStack(I,L,type,varargin)
 stackI = zeros(M, N, L);
 
 switch type
-    case sin1
+    case 'sin1'
         period = varargin{1}
         amp = varargin{2}
         
