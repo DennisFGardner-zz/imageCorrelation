@@ -4,15 +4,17 @@ function [stackI] = createImageStack(I,L,type,varargin)
 %   contain the original image, I, but it will be shifited by an interger
 %   number of pixels. 
 %
-% Syntax:  [stackI] = createImageStack(I, L, type, parameter1, parameter2)
-%
 % Inputs:
 %    I - original 2D image size [M, N]
 %    L - number of slices in the 3D array
-%    type - type of motions: sinusoidal, (more coming in the future)
+%    type - type of motions: sin1, (more coming in the future)
+%       sin1 - sinusoidal motion in one direction
 %
 % Outputs:
 %    stackI - 2D array size [M, N, L], each slice is a shifted I
+%
+% Syntax:  [stackI] = createImageStack(I, L, type, parameter1, parameter2)
+%       [stackI] = createImageStack(I, L, 'sin1', 'PERIOD', 'AMP')
 %
 % Example: 
 %    Line 1 of example
@@ -34,7 +36,15 @@ function [stackI] = createImageStack(I,L,type,varargin)
 
 %------------- BEGIN CODE --------------
 
-% Enter your executable matlab commands here
+[M, N] = size(I);
+stackI = zeros(M, N, L);
+
+switch type
+    case sin1
+        period = varargin{1}
+        amp = varargin{2}
+        
+end
 
 
 %------------- END OF CODE --------------
