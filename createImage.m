@@ -1,24 +1,24 @@
-function [I] = createImage(M, N, W, 'type')
-%FUNCTION_NAME - One line description of what the function or script performs (H1 line)
-%Optional file header info (to give more details about the function than in the H1 line)
-%Optional file header info (to give more details about the function than in the H1 line)
-%Optional file header info (to give more details about the function than in the H1 line)
+function [I] = createImage(M, N, W, type)
+%CREATEIMAGE - create a square or circle size [M,N] with width W
+%   This function will create a square or a circle in the center of the
+%   array. The array has M rows and N cols. The side length of the square
+%   is W and the diameter of the circle is W. 
 %
-% Syntax:  [output1,output2] = function_name(input1,input2,input3)
+% Syntax:  [I] = createImage(M,N,W, type);
 %
 % Inputs:
-%    input1 - Description
-%    input2 - Description
-%    input3 - Description
+%    M - rows
+%    N - cols
+%    W - width
+%    type - string - 'square' or 'circle'
 %
 % Outputs:
-%    output1 - Description
-%    output2 - Description
+%    I - binary array with either a square or circle in the middle
 %
 % Example: 
-%    Line 1 of example
-%    Line 2 of example
-%    Line 3 of example
+%    [I] = createImage(512, 512, 256, 'square'); imagesc(I);
+%    or
+%    [I] = createImage(512, 512, 256, 'circle'); imagesc(I);
 %
 % Other m-files required: none
 % Subfunctions: none
@@ -31,7 +31,7 @@ function [I] = createImage(M, N, W, 'type')
 % email: dennis.gardner@colorado.edu
 % Website 1: http://www.github.com/DennisFGardner 
 % Website 2: http://www.linkedin.com/in/dennisfgardner
-% File Creation: Sept. 14th, 2016
+% File Creation: Sept. 15th, 2016
 
 %------------- BEGIN CODE --------------
 
