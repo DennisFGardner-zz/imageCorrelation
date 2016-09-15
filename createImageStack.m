@@ -47,8 +47,12 @@ function [stackI] = createImageStack(I, L, type, varargin)
 % size of the original image
 [M, N] = size(I);
 
-% initialize the stackI
-stackI = zeros(M, N, L);
+% initialize the stackI, preserve logical arrrays
+if islogical(I)
+    stackI = false(M, N, L);
+else
+    stackI = zeros(M, N, L);
+end
 
 % determine the kind of motion (right now it's only sine, but in the future
 % there could be more)
