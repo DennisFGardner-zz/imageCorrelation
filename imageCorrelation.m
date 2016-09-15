@@ -1,19 +1,20 @@
-function [output1,output2] = imageCorrelation(input1,input2,input3)
-%FUNCTION_NAME - One line description of what the function or script performs (H1 line)
-%   Optional file header info (to give more details about the function than in the H1 line)
-%   Optional file header info (to give more details about the function than in the H1 line)
-%   Optional file header info (to give more details about the function than in the H1 line)
+function [gamma] = imageCorrelation(I1,I2)
+%IMAGECORRELATION - quantify the simularity of I1 with respect to I2
 %
-% Syntax:  [output1,output2] = function_name(input1,input2,input3)
+%   This function computes the "cross-correlation" as defined by Kwon et
+%   al. (see ref. below. The first image, I1, is a reference image. The
+%   reference image is compared to I2. If I2 is a stack of images, then a
+%   gamma is calculated for each I2 slice with resplect ot I1. If I1 is a
+%   stack, then the mean of I1 is used as the image to compare with I2. 
+%
+% Syntax:  [gamma] = imageCorrelation(I1,I2);
 %
 % Inputs:
-%    input1 - Description
-%    input2 - Description
-%    input3 - Description
+%    I1 - reference image(s)
+%    I2 - image(s) to compare to reference
 %
 % Outputs:
-%    output1 - Description
-%    output2 - Description
+%    gamma - "cross-correlation" value
 %
 % Example: 
 %    Line 1 of example
