@@ -17,9 +17,9 @@ function [I] = createImage(M, N, W, type)
 %    I - binary array with either a square or circle in the middle
 %
 % Example: 
-%    [I] = createImage(512, 512, 128, 'square'); imagesc(I);
+%    [I] = createImage(512, 512, 128, 'square'); imagesc(I); axis image;
 %    or
-%    [I] = createImage(512, 512, 128, 'circle'); imagesc(I);
+%    [I] = createImage(512, 512, 128, 'circle'); imagesc(I); axis image;
 %
 % Other m-files required: none
 % Subfunctions: none
@@ -36,17 +36,16 @@ function [I] = createImage(M, N, W, type)
 
 %------------- BEGIN CODE --------------
 
-I = zeros(M, N);
+I = false(M, N);
 
 switch type
     case 'square'
-        I(M/2-W/2:M/2+W/2-1, N/2-W/2:N/2+W/2-1) = 1;
+        I(M/2-W/2:M/2+W/2-1, N/2-W/2:N/2+W/2-1) = true;
         
     case 'circle'
         
 end
 
-I = logical(I);
 
 %------------- END OF CODE --------------
 end
