@@ -46,7 +46,40 @@ function [gamma] = imageCorrelation(I1,I2)
 
 %------------- BEGIN CODE --------------
 
-% Enter your executable matlab commands here
+% if I1 is a stack of images, take the mean as the reference iamge
+I1 = mean(I1,3);
+
+% calculate the contrast for I1
+I1mean = mean(I1(:));
+C = (I1 - I1mean)/I1mean; 
+
+% calculate gamma for each I2 
+L = size(I2, 3);
+gamma = zeros(L,1);
+
+for ii = 1:L,
+    Itemp = I2(:,:,ii);
+    
+    % calculate constrast for I2
+    ItempMean = mean(I2(:));
+    Cprime = (Itemp - ItempMean)/ItempMean;
+    
+    % caclulate numerator 
+    numerator = C(:).*Cprime(:);
+    numerator = sum(numerator(:));
+    
+    % caclutate denominator
+    C2 = C(:).*C(:); 
+    C2 = sum(C2);
+    Cprime2 = Cprime(:).*Cprime(:);
+    Cprime2 = sum(Cprime2);
+    denominator = C2*Cprime2;
+    denominator = sqrt(denominator);
+    
+    gamma(ii) = numerator/denominator;
+    
+    
+end
 
 
 %------------- END OF CODE --------------
