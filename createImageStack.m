@@ -16,14 +16,14 @@ function [stackI] = createImageStack(I,L,type,varargin)
 % Syntax:  [stackI] = createImageStack(I, L, type, parameter1, parameter2)
 %       [stackI] = createImageStack(I, L, 'sin1', 'PERIOD', 'AMP')
 %
-% Example: 
+% Example:
 %       [I] = createImage(512, 512, 128, 'square'); imagesc(I); axis image;
-%       L = 100;
-%       [stackI] = createImageStack(I, L, 'sin1', 50, 50);
+%       L = 50; period = 25; amp = 100;
+%       [stackI] = createImageStack(I, L, 'sin1', period, 100);
 %       for ii=1:L, 
-%           imagesc(stackI(:,:,ii)); 
-%           drawnow; 
-%           pause(0.1); 
+%          imagesc(stackI(:,:,ii)); 
+%          drawnow; 
+%          pause(0.05); 
 %       end;
 %       close all
 %       
