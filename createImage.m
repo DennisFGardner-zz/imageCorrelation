@@ -25,7 +25,7 @@ function [I] = createImage(M, N, W, type)
 % Subfunctions: none
 % MAT-files required: none
 %
-% See also: CREATEIMAGESTACK
+% See also: CREATEIMAGESTACK, IMAGECORRELATION
 
 % Author: Dennis F Gardner
 % JILA, Univeristy of Colorado, 440 UCB, Boulder, CO 80309
