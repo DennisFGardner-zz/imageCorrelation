@@ -2,7 +2,7 @@ function [stackI] = createImageStack(I,L,type,varargin)
 %CREATEIMAGESTACK - create 3D array, each slice is I with a circshift
 %   This function will create a 3D array. Each slice of the array will
 %   contain the original image, I, but it will be shifited by an interger
-%   number of pixels. 
+%   number of pixels. The first slice, stackI(:,:,1), will be unshifted.
 %
 % Inputs:
 %    I - original 2D image size [M, N]
@@ -48,8 +48,10 @@ stackI = zeros(M, N, L);
 
 switch type
     case 'sin1'
-        period = varargin{1}
-        amp = varargin{2}
+        period = varargin{1};
+        amp = varargin{2};
+        x = 0:1:L-1;
+        y = amp*sin(2*pi*x/period)'
         
 end
 
