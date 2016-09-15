@@ -7,19 +7,22 @@ function [stackI] = createImageStack(I,L,type,varargin)
 % Inputs:
 %    I - original 2D image size [M, N]
 %    L - number of slices in the 3D array
-%    type - type of motions: sin1, (more coming in the future)
-%       sin1 - sinusoidal motion in one direction
+%    type - type of motions: sinx, (more coming in the future)
+%       sinx - left/right sinusoidal motion
+%       siny - up/down sinusoidal motion 
 %
 % Outputs:
-%    stackI - 2D array size [M, N, L], each slice is a shifted I
+%    stackI - 3D array size [M, N, L], each slice is a shifted I
 %
-% Syntax:  [stackI] = createImageStack(I, L, type, parameter1, parameter2)
-%       [stackI] = createImageStack(I, L, 'sin1', 'PERIOD', 'AMP')
+% Syntax:   [stackI] = createImageStack(I, L, type, parameter1, parameter2);
+%           [stackI] = createImageStack(I, L, 'sinx', PERIOD, AMP);
+%           [stackI] = createImageStack(I, L, 'siny', PERIOD, AMP);
 %
+%           
 % Example:
 %       [I] = createImage(512, 512, 128, 'square'); imagesc(I); axis image;
 %       L = 50; period = 25; amp = 100;
-%       [stackI] = createImageStack(I, L, 'sin1', period, 100);
+%       [stackI] = createImageStack(I, L, 'sinx', period, 100);
 %       for ii=1:L, 
 %          imagesc(stackI(:,:,ii)); 
 %          drawnow; 
@@ -47,7 +50,7 @@ function [stackI] = createImageStack(I,L,type,varargin)
 stackI = zeros(M, N, L);
 
 switch type
-    case 'sin1'
+    case 'sinx'
         period = varargin{1};
         amp = varargin{2};
         x = 0:1:L-1;
