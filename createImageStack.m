@@ -51,7 +51,16 @@ switch type
         period = varargin{1};
         amp = varargin{2};
         x = 0:1:L-1;
-        y = amp*sin(2*pi*x/period)'
+        shifts = amp*sin(2*pi*x/period);
+        
+        % integer shifts only (for now)
+        shifts = round(shifts);
+        
+        for ii = 1:L,
+            % shift along the col direction (left-right)
+            stackI(:,:,ii) = circshift(I, shifts(ii), 2);
+            
+        end
         
 end
 
