@@ -1,8 +1,9 @@
 function [I] = createImage(M, N, W, type)
-%CREATEIMAGE - create a square or circle size [M,N] with width W
+%CREATEIMAGE - create a binary square or circle size [M,N] with width W
 %   This function will create a square or a circle in the center of the
 %   array. The array has M rows and N cols. The side length of the square
-%   is W and the diameter of the circle is W. 
+%   is W and the diameter of the circle is W. The values of the feature are
+%   1's and the background are 0's. 
 %
 % Syntax:  [I] = createImage(M,N,W, type);
 %
@@ -24,7 +25,7 @@ function [I] = createImage(M, N, W, type)
 % Subfunctions: none
 % MAT-files required: none
 %
-% See also: OTHER_FUNCTION_NAME1,  OTHER_FUNCTION_NAME2
+% See also: none
 
 % Author: Dennis F Gardner
 % JILA, Univeristy of Colorado, 440 UCB, Boulder, CO 80309
