@@ -35,17 +35,21 @@ function [I] = createImage(M, N, W, type)
 % File Creation: Sept. 15th, 2016
 
 %------------- BEGIN CODE --------------
-
-I = false(M, N);
-
 switch type
-    case 'square'
+    case 'square' % create a square
+        I = false(M, N);
         I(M/2-W/2:M/2+W/2-1, N/2-W/2:N/2+W/2-1) = true;
-        
-    case 'circle'
-        
+    case 'circle' % create a circle
+        % grid vectors
+        xgv = -N/2:1:N/2-1;
+        ygv = -M/2:1:M/2-1;
+        % full grids
+        [X, Y] = meshgrid(xgv, ygv);
+        % create circle
+        I = X.*X + Y.*Y;
+        I(I<=W/2*W/2) = 1;
+        I(I>1) = 0;
+        I = logical(I);
 end
-
-
 %------------- END OF CODE --------------
 end
