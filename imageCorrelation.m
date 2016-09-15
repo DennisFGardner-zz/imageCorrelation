@@ -68,19 +68,19 @@ for ii = 1:L,
     numerator = C(:).*Cprime(:);
     numerator = sum(numerator(:));
     
-    % caclutate denominator
+    % calculate squares of constrast
     C2 = C(:).*C(:); 
     C2 = sum(C2);
     Cprime2 = Cprime(:).*Cprime(:);
     Cprime2 = sum(Cprime2);
+    
+    % caclutate denominator
     denominator = C2*Cprime2;
     denominator = sqrt(denominator);
     
     gamma(ii) = numerator/denominator;
     
-    
 end
-
 
 %------------- END OF CODE --------------
 end
