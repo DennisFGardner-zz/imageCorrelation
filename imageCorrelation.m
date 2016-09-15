@@ -7,6 +7,18 @@ function [gamma] = imageCorrelation(I1,I2)
 %   gamma is calculated for each I2 slice with resplect ot I1. If I1 is a
 %   stack, then the mean of I1 is used as the image to compare with I2. 
 %
+% _does this really work_
+% \begin{equation}\label{eq: xCorrDef}
+% 	\gamma( t^\prime ; t ) = \frac{\Sigma_{x,y} C_{x,y}(t) C_{x,y}(t^\prime)}
+%                      {\sqrt{\Sigma_{x,y}C_{x,y}(t)^2\Sigma_{x,y}C_{x,y}(t^\prime)^2}}
+% \end{equation}
+% 
+% where C is the contrast at times $t$ and $t^\prime$. The contrast is given by:
+% \begin{equation}\label{(eq: contrastDef)}	
+% 	C_{x,y} = \frac{I_{x,y}(t) - \bar{I}(t)}{\bar{I}(t)}
+% \end{equation}
+% where $\bar{I}(t)$ is the mean of $I_{x,y}(t)$. 
+%
 % Syntax:  [gamma] = imageCorrelation(I1,I2);
 %
 % Inputs:
@@ -25,7 +37,12 @@ function [gamma] = imageCorrelation(I1,I2)
 % Subfunctions: none
 % MAT-files required: none
 %
+% Ref: Oh Hoon Kwon, Brett Barwick, Hyun Soon Park, J. Spencer Baskin, and
+% Ahmed H. Zewail. Nanoscale mechanical drumming visualized by 4D electron
+% microscopy. Nano Letters, 8(11):3557–3562, 2008.
+%
 % See also: CREATEIMAGESTACK,  CREATEIMAGE
+
 
 % Author: Dennis F Gardner
 % JILA, Univeristy of Colorado, 440 UCB, Boulder, CO 80309
