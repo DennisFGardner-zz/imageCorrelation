@@ -49,8 +49,10 @@ function [stackI] = createImageStack(I,L,type,varargin)
 [M, N] = size(I);
 stackI = zeros(M, N, L);
 
-switch type
-    case 'sinx'
+typeClass = type(1:3);
+
+switch typeClass
+    case 'sin'
         period = varargin{1};
         amp = varargin{2};
         x = 0:1:L-1;
@@ -59,11 +61,24 @@ switch type
         % integer shifts only (for now)
         shifts = round(shifts);
         
-        for ii = 1:L,
+        if strcmp(type, 'sinx')
             % shift along the col direction (left-right)
-            stackI(:,:,ii) = circshift(I, shifts(ii), 2);
+            for ii = 1:L,
+                stackI(:,:,ii) = circshift(I, shifts(ii), 2);
+            end
             
+        elseif strcmp(type, 'siny');
+            % shift along the col direction (left-right)
+            for ii = 1:L,
+                stackI(:,:,ii) = circshift(I, shifts(ii), 1);
+            end
+            
+        else
+            error(message('sin type not recognized'))
         end
+
+    otherwise
+        error(message('type not supported'))
         
 end
 
