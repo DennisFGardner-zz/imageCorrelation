@@ -81,13 +81,26 @@
 
 On Aug. 30th, 2016 Giulia sent me two papers on correlation techniques. These papers may illuminate a path to find a signal in the pumped Ni circles that Liz made (Ni sample B). She sent me one paper from Nano Letters \cite{Kwon2008} and one from Science \cite{Barwick2008a}. "The analysis reported in Nano Letters is particularly of interest for our case." - Giulia
 
+\subsection{Definition of the cross-correlation}
+In the paper by Kwon et. \textit{al} \cite{Kwon2008}, they define the cross-correlation as:
+
+
+\begin{equation}\label{eq: xCorrDef}
+	\gamma( t^\prime ; t ) = \frac{\Sigma_{x,y} C_{x,y}(t) C_{x,y}(t^\prime)}
+                     {\sqrt{\Sigma_{x,y}C_{x,y}(t)^2\Sigma_{x,y}C_{x,y}(t^\prime)^2}}
+\end{equation}
+
+where C is the contrast at times $t$ and $t^\prime$. The contrast is given by:
+\begin{equation}\label{(eq: contrastDef)}	
+	C_{x,y} = \frac{I_{x,y}(t) - \bar{I}(t)}{\bar{I}(t)}
+\end{equation}
+where $\bar{I}(t)$ is the mean of $I_{x,y}(t)$. 
 
 \bibliography{imageCorrelation}
 \bibliographystyle{unsrt}
 
 
-
-
+\clearpage
 
 \subsection{Leftover from template}
 
