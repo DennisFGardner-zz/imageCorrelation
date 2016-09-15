@@ -25,7 +25,7 @@ function [gamma] = imageCorrelation(I1,I2)
 % Subfunctions: none
 % MAT-files required: none
 %
-% See also: OTHER_FUNCTION_NAME1,  OTHER_FUNCTION_NAME2
+% See also: CREATEIMAGESTACK,  CREATEIMAGE
 
 % Author: Dennis F Gardner
 % JILA, Univeristy of Colorado, 440 UCB, Boulder, CO 80309

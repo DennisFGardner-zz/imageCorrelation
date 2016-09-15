@@ -33,7 +33,7 @@ function [stackI] = createImageStack(I, L, type, varargin)
 % Subfunctions: none
 % MAT-files required: none
 %
-% See also: CREATEIMAGE
+% See also: CREATEIMAGE, IMAGECORRELATION
 
 % Author: Dennis F Gardner
 % JILA, Univeristy of Colorado, 440 UCB, Boulder, CO 80309
