@@ -21,7 +21,7 @@ function [stackI] = createImageStack(I, L, type, varargin)
 % Example:
 %     [I] = createImage(512, 512, 128, 'square');
 %     L = 50; period = 25; amp = 100;
-%     [stackI] = createImageStack(I, L, 'sinx', period, 100);
+%     [stackI] = createImageStack(I, L, 'sinx', period, amp);
 %     for ii=1:L, 
 %         imagesc(stackI(:,:,ii)); axis image
 %         drawnow; 
