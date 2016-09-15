@@ -7,10 +7,14 @@ function [gamma] = imageCorrelation(I1,I2)
 %   gamma is calculated for each I2 slice with resplect ot I1. If I1 is a
 %   stack, then the mean of I1 is used as the image to compare with I2. 
 %
+%
+%%
+% $\gamma( t^\prime ; t ) = \frac{\Sigma_{x,y} C_{x,y}(t) C_{x,y}(t^\prime)}
+%                      {\sqrt{\Sigma_{x,y}C_{x,y}(t)^2\Sigma_{x,y}C_{x,y}(t^\prime)^2}}$
+%
 % _does this really work_
 % \begin{equation}\label{eq: xCorrDef}
-% 	\gamma( t^\prime ; t ) = \frac{\Sigma_{x,y} C_{x,y}(t) C_{x,y}(t^\prime)}
-%                      {\sqrt{\Sigma_{x,y}C_{x,y}(t)^2\Sigma_{x,y}C_{x,y}(t^\prime)^2}}
+% 	
 % \end{equation}
 % 
 % where C is the contrast at times $t$ and $t^\prime$. The contrast is given by:
