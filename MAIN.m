@@ -9,6 +9,7 @@
 
 %% Create an intial image and sinusoidally shift it around
 % This is the example from createImageStack.m
+% combined with the example from imageCorrelation.m
 
 [I] = createImage(512, 512, 128, 'square');
 L = 50; period = 25; amp = 100;
@@ -20,10 +21,10 @@ for ii=1:L,
 end;
 close all
 
+gamma = imageCorrelation(I, stackI); plot(gamma); axis tight;
+
 % i like a clean Workspace
 clear L period amp ii
 
-%% Calculate the cross-correlation coefficent
-% 
-gamma = imageCorrelation(I, stackI); plot(gamma); axis tight;
+
 
