@@ -22,9 +22,10 @@ function [gamma] = imageCorrelation(I1,I2)
 %    gamma - "cross-correlation" value for each slice of I2
 %
 % Example: 
-%    Line 1 of example
-%    Line 2 of example
-%    Line 3 of example
+%     [I] = createImage(512, 512, 128, 'square');
+%     L = 50; period = 25; amp = 100;
+%     [stackI] = createImageStack(I, L, 'sinx', period, amp);
+%     gamma = imageCorrelation(I, stackI); plot(gamma); axis tight;
 %
 % Other m-files required: none
 % Subfunctions: none
