@@ -22,3 +22,8 @@ close all
 
 % i like a clean Workspace
 clear L period amp ii
+
+%% Calculate the cross-correlation coefficent
+% 
+gamma = imageCorrelation(I, stackI); plot(gamma); axis tight;
+
